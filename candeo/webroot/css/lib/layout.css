@@ -1,0 +1,97 @@
+@charset "utf-8";
+/* Layout
+Domain:				artillery.ch/bachelorapp
+Start:				080421_BW
+Last update:	080421_BW
+Author:				BW
+Author URL:		artillery.ch
+*/
+/* Header
+/////////////////////////////////////////////////////////////////*/
+#header{
+	position: relative;
+	height: 100px;
+	width: 100%;
+	background: url('../../img/header_bg.png') repeat-x;
+}
+	#header h1{
+		padding: 0;
+		background: #222222;
+		padding-left: 120px;
+		line-height: 0;
+		text-transform: uppercase;
+	}
+	#header h1 a{
+		display: block;
+		text-indent: -9999px;
+		width: 387px;
+		height: 49px;
+		background: url('../../img/header_logo.png') no-repeat;
+	}
+/* Container
+/////////////////////////////////////////////////////////////////*/
+#container {
+	margin: 0 10% 0 120px;
+	min-width: 500px;
+	width: 80%;
+/* recover from ie5 work around on the body*/
+	text-align:left;
+	position:relative;
+}
+/* Navigation
+/////////////////////////////////////////////////////////////////*/
+#nav					{ position: absolute; left: -106px; top: 0; z-index: 1;}
+#nav ul				{ list-style: none; margin: 0;}
+#nav ul li		{ }
+/* Content
+/////////////////////////////////////////////////////////////////*/
+#content {
+	clear: both;
+	height: auto; min-height: 300px;
+	padding: 20px;
+	position: relative;
+	background: #eee;
+}
+#content p{ margin: 0; padding: 20px; background: #fff;}
+#content ul{ margin: 0; padding: 20px; background: #fff;}
+#content h2{
+	color: #333;
+	padding: 12px 20px 0;
+	height: 22px;
+	border: 1px solid #aaa;
+	background: url('../../img/h2_bg.png');
+}
+#content a.edit, #content a.add{ position: absolute; top: 28px; right: 40px;}
+#content #page_nav{
+	height: 27px;
+	padding: 7px 20px 0;
+	border: 1px solid #aaa;
+	background: url('../../img/h2_bg.png');
+}
+#content #page_nav.pagination div{ display: inline;}
+#page_nav.pagination{ text-align: center;}
+#page_nav.pagination a.prev,
+#page_nav.pagination div.prev{ float: left;}
+#page_nav.pagination a.next,
+#page_nav.pagination div.next{ float: right; margin-top: -17px;}
+/* Footer
+/////////////////////////////////////////////////////////////////*/
+#footer {
+	clear: both;
+	padding: 20px 0 0;
+	margin-bottom: 20px;
+	border-bottom: 3px solid #222;
+}
+#footer p{
+	margin-bottom: 15px;
+}
+/* Debug
+/////////////////////////////////////////////////////////////////*/
+.cake-sql-log{
+	margin: 0 10% 0 120px;
+	min-width: 500px;
+	width: 80%;
+}
+.cake-sql-log caption{
+	margin: 0 10% 0 120px;
+}
