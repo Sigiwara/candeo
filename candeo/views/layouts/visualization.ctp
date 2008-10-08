@@ -22,31 +22,15 @@
 	<?php echo $html->css('base', 'stylesheet', array('media'=>'all')); ?>
 	<!-- ——————————————————————————————————————————————————————————————————— JS -->
 	<?php echo $scripts_for_layout; ?>
-	<script src="<?=$this->base ?>/js/jquery-1.2.6.min.js" type="text/javascript"></script>
-	<script type="text/javascript">
-		<!--
-		$(document).ready(function(){
-			if($('.message') != null){
-				setTimeout(function(){
-					$('.message').fadeOut('slow');
-				}, 4000)
-			}
-		})
-		//-->
-	</script>
+	<script src="<?=$this->base ?>/js/jquery.js" type="text/javascript"></script>
 </head>
 	<!-- ——————————————————————————————————————————————————————————————————— BODY -->
-<body class="default">
+<body class="visualization">
 	<div id="header">
 		<h1><?php echo $html->link('Candeo', '/',  array()); ?></h1>
 	</div><!-- #header -->
-	<?php echo $this->element('flash'); ?>
 	<div id="container">
-		<div id="content">
 			<?php echo $content_for_layout ?>
-		</div><!-- #content -->
-		<div id="footer">
-		</div><!-- #footer -->
 	</div><!-- #container -->
 </body>
 </html>

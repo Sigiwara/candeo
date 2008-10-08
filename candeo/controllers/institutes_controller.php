@@ -9,6 +9,12 @@ class InstitutesController extends AppController
 			'Institute.id' => 'asc'
 			)
 		);
+	function data(){
+		$this->layout = 'data';
+		$this->set('buildings', $this->Institute->Building->find('list'));
+		$this->set('records', $this->Institute->Record->find('list'));
+		$this->set('institutes', $this->Institute->findAll());
+	}
 	function admin_index(){
 		$this->set('institutes', $this->paginate());
 	}
@@ -17,12 +23,6 @@ class InstitutesController extends AppController
 		$this->set('institute', $this->Institute->read());
 		$this->set('records', $this->Institute->Record->find('list'));
 		$this->pageTitle = 'View Institute';
-	}
-	function data(){
-		$this->layout = 'data';
-		$this->set('buildings', $this->Institute->Building->find('list'));
-		$this->set('records', $this->Institute->Record->find('list'));
-		$this->set('institutes', $this->Institute->findAll());
 	}
 	function admin_add(){
 		$this->set('buildings', $this->Institute->Building->find('list'));
@@ -46,6 +46,10 @@ class InstitutesController extends AppController
 				$this->flash('Your Institute has been updated.','/admin/institutes');
 			}
 		}
+	}
+	function admin_home(){
+		$this->pageTitle = 'Administration';
+		$this->layout = 'admin';
 	}
 }
 

@@ -10,15 +10,19 @@ Last update:	080729
 
 /* Form Styles */
 form				{ }
+form#UserLoginForm{ margin: 0 auto; width: 456px;}
 form ul			{ list-style: none; margin: 0; padding: 20px 20px 40px !important; background: #fff; }
 
 /* Divs */
-div.input				{ clear: left;}
-div.submit			{ float: right;}
+.input				{ clear: left;}
+.submit			{ float: right;}
 
 /* Fieldsets */
 fieldset    { padding:1.4em; margin: 1.5em 0 1.5em 0; border: 1px solid #ddd; width: 376px; background:#fafafa; }
 fieldset:hover{ border:1px solid #999; background:#fff; }
+#UserLoginForm fieldset { width: 420px;}
+
+/* Legends */
 legend      { text-transform: uppercase; padding: 0 5px; }
 
 /* Label */
@@ -34,15 +38,16 @@ label				{
 li.radiofield fieldset label{ width: 90px;}
 li.radiofield fieldset input.radio{ margin-right: 70px;}
 
+#UserLoginForm label{ padding-top: 10px;}
+
 .input span	{ color: #999;}
 
 /* Text fields */
-input.text, input.title   { width: 300px; margin:0.5em 0.5em 0.5em 0; }
-input.text, input.title   { border:1px solid #ddd; background:#fafafa; padding:6px 5px 4px; }
-input.text:focus,
-input.title:focus         { border:1px solid #999; background:#fff; }
-input.title               { font-size:1.5em; }
-
+.text input,
+.password input				{ width: 300px; margin:0.5em 0.5em 0.5em 0; border:1px solid #ddd; background:#fafafa; padding:6px 5px 4px; }
+.text input:focus,
+.password input:focus	{ border:1px solid #999; background:#fff; }
+#UserLoginForm .input input { font-size: 1.5em; margin-right: 0;}
 /* Textareas */
 textarea            { width: 300px; height: 150px; margin:0.5em 0.5em 0.5em 0; }
 textarea            { border:1px solid #ddd; background:#fafafa; padding:5px; }
@@ -53,7 +58,7 @@ select              { border:1px solid #ddd; background:#fafafa; width:312px; ma
 select:focus        { border:1px solid #999; background:#fff; }
 
 /* Radio buttons */
-input.radio					{ margin-right: 80px;}
+.radio input				{ margin-right: 80px;}
 
 /* Success, error & notice boxes for messages and errors. */
 .error,

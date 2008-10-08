@@ -9,6 +9,15 @@ class RecordsController extends AppController
 			'Record.id' => 'asc'
 			)
 		);
+	function data(){
+		$this->layout = 'data';
+		$this->set('institutes', $this->Record->Institute->find('list'));
+		$this->set('atomics', $this->Record->Atomic->find('list'));
+		$this->set('biologicals', $this->Record->Biological->find('list'));
+		$this->set('chemicals', $this->Record->Chemical->find('list'));
+		$this->set('buildings', $this->Record->Building->find('list'));
+		$this->set('records', $this->Record->findAll());
+	}
 	function admin_index(){
 		$this->set('records', $this->paginate());
 	}
@@ -18,19 +27,6 @@ class RecordsController extends AppController
 		$this->set('institutes', $this->Record->Institute->find('list'));
 		$this->set('buildings', $this->Record->Building->find('list'));
 		$this->pageTitle = 'View Record';
-	}
-	function admin_home(){
-		$this->pageTitle = 'Candeo Administration';
-		$this->layout = 'admin';
-	}
-	function data(){
-		$this->layout = 'data';
-		$this->set('institutes', $this->Record->Institute->find('list'));
-		$this->set('atomics', $this->Record->Atomic->find('list'));
-		$this->set('biologicals', $this->Record->Biological->find('list'));
-		$this->set('chemicals', $this->Record->Chemical->find('list'));
-		$this->set('buildings', $this->Record->Building->find('list'));
-		$this->set('records', $this->Record->findAll());
 	}
 	function admin_add(){
 		$this->set('institutes', $this->Record->Institute->find('list'));

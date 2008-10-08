@@ -11,12 +11,14 @@ class UsersController extends AppController {
 				$this->Session->setFlash('Invalid user or password, please try again.');
 			}else{
 				$this->Session->write('admin', 1);
-				$this->redirect('/admin/records/home');
+				$this->Session->setFlash("You've kindly been logged in, good work!", 'default', array(), 'success');
+				$this->redirect(array('admin'=>true, 'controller'=>'institutes', 'action'=>'home'));
 			}
 		}
 	}
 	function admin_logout(){
-		$this->redirect(array('admin'=>false, 'controller'=>'users', 'action'=>'login'), 'are you shure?', true);
+		$this->Session->setFlash("You've kindly been logged out, good bye!", 'default', array(), 'success');
+		$this->redirect(array('admin'=>false, 'controller'=>'users', 'action'=>'login'), true);
 	}
 }
 ?>

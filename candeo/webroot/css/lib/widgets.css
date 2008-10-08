@@ -8,6 +8,12 @@ Author URL:		artillery.ch
 */
 /* Navigation
 /////////////////////////////////////////////////////////////////*/
+#nav span{
+	display: block;
+	padding-right: 20px;
+}
+#nav span#con_secondary{cursor: n-resize;}
+#nav span#ex_secondary{cursor: s-resize;}
 #nav ul li a	{
 	font-weight: normal;
 	text-transform: uppercase;
@@ -83,3 +89,30 @@ p.dates span { margin: 0 10px 0 20px; color: #999;}
 /* Counter
 /////////////////////////////////////////////////////////////////*/
 h2 span.count{ font-weight: normal; padding-left: 20px; font-size: 12px;}
+/* Pagination
+/////////////////////////////////////////////////////////////////*/
+#page_nav.pagination div					{ display: inline;}
+#page_nav.pagination							{ text-align: center; position: relative;}
+#page_nav.pagination a.prev,
+#page_nav.pagination div.prev			{ position: absolute; top: 7px; left: 10px; float: left;}
+#page_nav.pagination a.next,
+#page_nav.pagination div.next			{ position: absolute; top: 7px; right: 10px;}
+#page_nav.pagination strong span	{ }
+#page_nav.pagination strong				{ font-weight: normal;}
+#page_nav.pagination div.disabled	{ color: #999;}
+#page_nav.pagination span.current	{ color: #F03;}
+/* Messages
+/////////////////////////////////////////////////////////////////*/
+.message{
+	padding: 5px 0;
+	text-align: center;
+	color: #fff;
+	font-weight: bold;
+	background: #00DCD6;
+	border-radius: 6px;
+	border-radius: 6px;
+	-moz-border-radius: 6px;
+	-moz-border-radius: 6px;
+	-webkit-border-radius: 6px;
+	-webkit-border-radius: 6px;
+}

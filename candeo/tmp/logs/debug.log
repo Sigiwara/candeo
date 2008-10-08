@@ -3,3 +3,5 @@
 2008-03-20 12:54:51 Notice: Notice (1024): Please change the value of 'Security.salt' in app/config/core.php to a salt value specific to your application in [CORE/cake/libs/debugger.php, line 535]
 2008-03-20 13:14:43 Notice: Notice (8): Undefined variable: hello in [APP/views/test/hello_world.ctp, line 1]
 2008-09-26 11:31:08 Notice: Notice (8): Undefined property:  PagesController::$Page in [APP/controllers/pages_controller.php, line 87]
+2008-10-08 23:29:05 Notice: Notice (8): Undefined property:  View::$Session in [APP/views/elements/flash.ctp, line 2]
+2008-10-08 23:29:07 Notice: Notice (8): Undefined property:  View::$Session in [APP/views/elements/flash.ctp, line 2]

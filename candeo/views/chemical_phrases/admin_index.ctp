@@ -1,4 +1,4 @@
-<h2>Chemical Phrases</h2>
+<h2>Chemical Phrases  <span class="count"><strong><?php echo $paginator->counter(array('format' => __('%count% ', true))); __('recorded')?></span></h2>
 	<?php echo $html->link('Add', array('action'=>'add'), array('class'=>'edit')); ?>
 <table>
 	<tr>
@@ -12,18 +12,20 @@
 	<tr>
 		<td><?php echo $chemicalPhrase['ChemicalPhrase']['id']; ?></td>
 		<td>
-			<?php echo $html->link($chemicalPhrase['ChemicalPhrase']['phraseType'].' '.$chemicalPhrase['ChemicalPhrase']['phraseIndex'], "/chemicalPhrases/view/".$chemicalPhrase['ChemicalPhrase']['id']); ?>
+			<?php echo $html->link($chemicalPhrase['ChemicalPhrase']['phraseType'].' '.$chemicalPhrase['ChemicalPhrase']['phraseIndex'], array('action'=>'view', $chemicalPhrase['ChemicalPhrase']['id']), array('title'=>'view this item'));?>
 		</td>
 		<td>
-		<?php echo $html->link('Edit', '/chemicalPhrases/edit/'.$chemicalPhrase['ChemicalPhrase']['id']);?>
+		<?php echo $html->link('Edit', array('action'=>'edit', $chemicalPhrase['ChemicalPhrase']['id']), array('class'=>'edit_item', 'title'=>'edit this item'));?>
 		</td>
 		<td>
-			<?php echo $html->link('Delete', "/chemicalPhrases/delete/{$chemicalPhrase['ChemicalPhrase']['id']}", null, 'Are you sure?')?>
+			<?php echo $html->link('Delete', array('action'=>'delete', $chemicalPhrase['ChemicalPhrase']['id']), array('class'=>'delete_item', 'title'=>'delete this item'), 'Are you sure?')?>
 		</td>
 	</tr>
 	<?php endforeach; ?>
 
 </table>
-<div id="page_nav">
-	<?php echo $html->link('Back', '/', array('class' => 'back')); ?>
+<div id="page_nav" class="pagination">
+	<?php echo $paginator->prev('« '.__('previous', true), array('class'=>'back prev'), null, array('class'=>'disabled prev'));?>
+	<?php echo $paginator->numbers( array(null, '|'));?>
+	<?php echo $paginator->next(__('next', true).' »', array('class'=>'back next'), null, array('class'=>'disabled next'));?>
 </div>

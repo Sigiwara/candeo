@@ -34,7 +34,7 @@
  * to use (in this case, /app/views/pages/home.thtml)...
  */
 	//Router::connect('/', array('controller' => 'pages', 'action' => 'display', 'home'));
-	Router::connect('/', array('controller' => 'records', 'action' => 'home', 'admin' => true));
+	Router::connect('/', array('controller' => 'institutes', 'action' => 'home', 'admin' => true));
 /**
  * ...and connect the rest of 'Pages' controller's urls.
  */

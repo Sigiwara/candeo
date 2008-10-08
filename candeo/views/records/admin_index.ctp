@@ -1,4 +1,4 @@
-<h2>Records <span class="count"><strong><?php echo count($records)."</strong> recorded"?></span></h2>
+<h2>Records <span class="count"><strong><?php echo $paginator->counter(array('format' => __('%count% ', true))); __('recorded')?></span></h2>
 	<?php echo $html->link('Add', array('action'=>'add'), array('class'=>'edit')); ?>
 <table>
 	<tr>
@@ -18,10 +18,10 @@
 	<tr>
 		<td><?php echo $record['Record']['id']; ?></td>
 		<td>
-			<?php echo $html->link($record['Record']['name'], "/records/view/".$record['Record']['id']); ?>
+			<?php echo $html->link($record['Record']['name'], array('action'=>'view', $record['Record']['id']), array('title'=>'view this item'));?>
 		</td>
 		<td>
-			<?php echo $html->link($record['Record']['institute_id'], "/institutes/view/".$record['Record']['institute_id']); ?>
+			<?php echo $html->link($record['Record']['institute_id'], array('controller'=>'institutes', 'action'=>'view', $record['Record']['institute_id']), array('title'=>'view this item'));?>
 		</td>
 		<td>
 			<?php echo $record['Record']['version']; ?>
@@ -56,15 +56,17 @@
 			<?php echo $record['Record']['floor']; ?>
 		</td>
 		<td>
-		<?php echo $html->link('Edit', '/records/edit/'.$record['Record']['id']);?>
+		<?php echo $html->link('Edit', array('action'=>'edit', $record['Record']['id']), array('class'=>'edit_item', 'title'=>'edit this item'));?>
 		</td>
 		<td>
-			<?php echo $html->link('Delete', "/records/delete/{$record['Record']['id']}", null, 'Are you sure?')?>
+			<?php echo $html->link('Delete', array('action'=>'delete', $record['Record']['id']), array('class'=>'delete_item', 'title'=>'delete this item'), 'Are you sure?')?>
 		</td>
 	</tr>
 	<?php endforeach; ?>
 
 </table>
-<div id="page_nav">
-	<?php echo $html->link('Back', array('controller'=>'pages', 'action'=>'home', 'admin'=>false), array('class'=>'back')); ?>
+<div id="page_nav" class="pagination">
+	<?php echo $paginator->prev('« '.__('previous', true), array('class'=>'back prev'), null, array('class'=>'disabled prev'));?>
+	<?php echo $paginator->numbers( array(null, '|'));?>
+	<?php echo $paginator->next(__('next', true).' »', array('class'=>'back next'), null, array('class'=>'disabled next'));?>
 </div>

@@ -57,7 +57,6 @@ tr a				{display: block;}
 
 blockquote  { margin: 18px 0 18px 23px; font-size: 0.9em; color: #666; font-style: italic; }
 strong      { font-weight: bold; }
-#page_nav strong{ font-weight: normal;}
 em          { font-style: italic; }
 pre         { margin-bottom: 18px; line-height:18px; background: #eee; padding:8px; border:1px solid #ddd; }
 code        { font:0.9em Monaco, monospace; }
