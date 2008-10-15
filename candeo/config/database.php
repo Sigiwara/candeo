@@ -61,7 +61,7 @@ class DATABASE_CONFIG
 								'host' => 'localhost',
 								'login' => 'root',
 								'password' => '',
-								'database' => 'candeo',
+								'database' => 'candeo_dev',
 								'prefix' => '');
 
 	var $test = array('driver' => 'mysql',

@@ -26,6 +26,12 @@
 	<script type="text/javascript">
 		<!--
 		$(document).ready(function(){
+			if($('.hint') != null){
+				$('.close').click(function(){
+					var hint = $(this).parent();
+					$(hint).fadeOut('slow');
+				})
+			}
 			if($('.message') != null){
 				setTimeout(function(){
 					$('.message').fadeOut('slow');

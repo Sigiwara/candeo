@@ -7,3 +7,8 @@
 2008-10-06 22:32:57 Warning: Warning (512): <span style = "color:Red;text-align:left"><b>SQL Error:</b> 1064: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'adminMode' at line 1</span> in [CORE/cake/libs/model/datasources/dbo_source.php, line 521]
 2008-10-06 22:33:54 Warning: Warning (512): <span style = "color:Red;text-align:left"><b>SQL Error:</b> 1064: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'adminMode' at line 1</span> in [CORE/cake/libs/model/datasources/dbo_source.php, line 521]
 2008-10-08 22:49:35 Warning: Warning (2): Cannot modify header information - headers already sent by (output started at /Users/Benji/Sites/Candeo/06_application/cake/basics.php:587) in [CORE/cake/libs/controller/controller.php, line 587]
+2008-10-11 09:34:32 Warning: Warning (2): Invalid argument supplied for foreach() in [APP/views/phrases/admin_index.ctp, line 11]
+2008-10-11 09:43:12 Warning: Warning (512): Method HtmlHelper::hidden does not exist in [CORE/cake/libs/view/helper.php, line 148]
+2008-10-11 09:58:59 Warning: Warning (512): Method HtmlHelper::hidden does not exist in [CORE/cake/libs/view/helper.php, line 148]
+2008-10-11 09:59:12 Warning: Warning (512): Method HtmlHelper::hidden does not exist in [CORE/cake/libs/view/helper.php, line 148]
+2008-10-11 11:23:49 Warning: Warning (2): Invalid argument supplied for foreach() in [APP/views/institutes/admin_records.ctp, line 12]

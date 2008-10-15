@@ -1,5 +1,9 @@
 <h2><?php echo $institute['Institute']['name']?></h2>
-	<?php echo $html->link('Edit', '/institutes/edit/'.$institute['Institute']['id'], array('class'=>'edit')); ?>
+<div class="actions">
+	<ul>
+		<li><?php echo $html->link('Edit', array('action'=>'edit', $institute['Institute']['id']), array('class'=>'btn')); ?></li>
+	</ul>
+</div>
 <dl>
 	<dt>Shortcut</dt><dd><?php echo $institute['Institute']['shortcut']; ?></dd>
 	<dt>Area</dt><dd><?php echo $institute['Institute']['area']; ?></dd>
@@ -10,13 +14,7 @@
 			echo '<dd>'.$html->link($building['name'], '/buildings/view/'.$building['id'], array()).'</dd>';
 		}
 	?>
-	<dt>Records</dt>
-	<?php
-		foreach ( $institute['Record'] as $record) {
-			echo '<dd>'.$html->link($record['name'], '/records/view/'.$record['id'], array()).'</dd>';
-		}
-	?>
 </dl>
 <div id="page_nav">
-	<?php echo $html->link('Back', '/institutes',  array('class'=>'back')); ?>
+	<?php echo $html->link('Back', array('action'=>'index',),  array('class'=>'back')); ?>
 </div>

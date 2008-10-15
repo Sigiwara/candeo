@@ -78,6 +78,12 @@ Author URL:		artillery.ch
 #nav					{ position: absolute; left: -106px; top: 0; z-index: 1; text-align: right;}
 #nav ul				{ list-style: none; margin: 0; text-align: left;}
 #nav ul li		{ }
+/* Actions
+/////////////////////////////////////////////////////////////////*/
+#content .actions				{ position: absolute; top: 28px; right: 40px; }
+#content .actions ul		{ margin: 0; padding: 0;}
+#content .actions ul li	{ float: left; margin-left: 10px;}
+#content a.edit, #content a.add{ position: absolute; top: 28px; right: 40px;}
 /* Content
 /////////////////////////////////////////////////////////////////*/
 #content {
@@ -96,7 +102,6 @@ Author URL:		artillery.ch
 	border: 1px solid #aaa;
 	background: url('../../img/h2_bg.png');
 }
-#content a.edit, #content a.add{ position: absolute; top: 28px; right: 40px;}
 #content #page_nav{
 	height: 27px;
 	padding: 7px 20px 0;

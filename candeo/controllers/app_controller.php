@@ -1,7 +1,5 @@
 <?
-
 class AppController extends Controller{
-	
 	function beforeFilter(){
 		if(isset($this->params[Configure::read('Routing.admin')])) {
 			$this->layout = 'admin';

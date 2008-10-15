@@ -30,12 +30,25 @@ class RecordsController extends AppController
 	}
 	function admin_add(){
 		$this->set('institutes', $this->Record->Institute->find('list'));
-		$this->set('atomics', $this->Record->Atomic->find('list'));
-		$this->set('biologicals', $this->Record->Biological->find('list'));
-		$this->set('chemicals', $this->Record->Chemical->find('list'));
 		if (!empty($this->data)){
 			if ($this->Record->save($this->data)){
 				$this->flash('Your Record has been saved.','/records/edit/'.$this->Record->id);
+			}
+		}
+	}
+	function admin_set($id){
+		Configure::write('debug', 2);
+		$this->set('institute', $this->Record->Institute->find($id));
+		$this->set('fields', $this->Record->Field->find('all'));
+		$this->set('buildings', $this->Record->Building->find('list'));
+		if (!empty($this->data)) {
+			$this->Record->create();
+			if ($this->Record->saveAll($this->data)) {
+				$this->Session->setFlash('Records saved');
+				$this->redirect(array('action'=>'index'), null, true);
+			} else {
+				$this->Session->setFlash('Records could not be saved');
+				$this->redirect(array('action'=>'index'), null, true);
 			}
 		}
 	}
@@ -50,9 +63,6 @@ class RecordsController extends AppController
 			$this->set('institutes', $this->Record->Institute->find('list'));
 			$insti = $this->Record->Institute->findById($this->data['Record']['institute_id']);
 			$this->set('buildings', $insti['Building']);
-			$this->set('atomics', $this->Record->Atomic->find('list'));
-			$this->set('biologicals', $this->Record->Biological->find('list'));
-			$this->set('chemicals', $this->Record->Chemical->find('list'));
 		}else{
 			if ($this->Record->save($this->data)){
 				$this->flash('Your Record has been updated.','/admin/records');

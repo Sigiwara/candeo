@@ -8,12 +8,6 @@ Author URL:		artillery.ch
 */
 /* Navigation
 /////////////////////////////////////////////////////////////////*/
-#nav span{
-	display: block;
-	padding-right: 20px;
-}
-#nav span#con_secondary{cursor: n-resize;}
-#nav span#ex_secondary{cursor: s-resize;}
 #nav ul li a	{
 	font-weight: normal;
 	text-transform: uppercase;
@@ -66,13 +60,40 @@ a.back:hover, a.edit:hover, a.add:hover, a.btn:hover{ color: #333;}
 a.back:active, a.edit:active, a.add:active, a.btn:active{
 	background-position: 0 -29px;
 }
-/* Buttons
+/* Icon Links
 /////////////////////////////////////////////////////////////////*/
+a.view_records{background: url('../../img/report.png') left center no-repeat;}
 a.edit_item		{background: url('../../img/pencil.png') left center no-repeat;}
 a.delete_item	{background: url('../../img/cross.png') left center no-repeat;}
 
-a.delete_item, a.edit_item{
+a.view_records, a.delete_item, a.edit_item{
 	padding-left: 20px;
+}
+/* Close Link
+/////////////////////////////////////////////////////////////////*/
+a.close{
+	display: block;
+	width: 14px;
+	height: 14px;
+	text-indent: -9999px;
+	overflow: hidden;
+	background-image: url('../../img/close_dark.png');
+	background-position: top left;
+}
+a:hover.close{
+	background-position: bottom left;
+}
+/* Extend / Reduce Link
+/////////////////////////////////////////////////////////////////*/
+a#con_secondary, a#ex_secondary{
+	padding-right: 20px;
+	font-weight: normal;
+}
+a:hover#con_secondary, a:hover#ex_secondary{ color: #333;}
+a#ex_secondary{background: url('../../img/arrow.png') 0 1px no-repeat;}
+a#con_secondary{background: url('../../img/arrow.png') 0 -9px no-repeat;}
+a#con_secondary, a#ex_secondary{
+	padding-left: 13px;
 }
 /* Shortcuts
 /////////////////////////////////////////////////////////////////*/
@@ -115,4 +136,25 @@ h2 span.count{ font-weight: normal; padding-left: 20px; font-size: 12px;}
 	-moz-border-radius: 6px;
 	-webkit-border-radius: 6px;
 	-webkit-border-radius: 6px;
+}
+/* Hints
+/////////////////////////////////////////////////////////////////*/
+.hint				{
+	position: relative;
+	float: right;
+	padding: 10px;
+	margin: 1.5em 0.5em 0.5em 0px;
+	width: 300px;
+	background: #FEFDCF;
+	border-radius: 6px;
+	border-radius: 6px;
+	-moz-border-radius: 6px;
+	-moz-border-radius: 6px;
+	-webkit-border-radius: 6px;
+	-webkit-border-radius: 6px;
+}
+.hint a.close{
+	position: absolute;
+	top: 6px;
+	right: 6px;
 }
